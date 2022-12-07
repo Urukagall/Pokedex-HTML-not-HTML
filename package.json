@@ -1,0 +1,22 @@
+{
+  "name": "pokedex-html-not-html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Urukagall/Pokedex-HTML-not-HTML.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Urukagall/Pokedex-HTML-not-HTML/issues"
+  },
+  "homepage": "https://github.com/Urukagall/Pokedex-HTML-not-HTML#readme",
+  "dependencies": {
+    "create-react-app": "^5.0.1"
+  }
+}
