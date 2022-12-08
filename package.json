@@ -15,8 +15,5 @@
   "bugs": {
     "url": "https://github.com/Urukagall/Pokedex-HTML-not-HTML/issues"
   },
-  "homepage": "https://github.com/Urukagall/Pokedex-HTML-not-HTML#readme",
-  "dependencies": {
-    "create-react-app": "^5.0.1"
-  }
+  "homepage": "https://github.com/Urukagall/Pokedex-HTML-not-HTML#readme"
 }
