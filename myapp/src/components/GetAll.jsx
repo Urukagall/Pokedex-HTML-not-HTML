@@ -32,7 +32,7 @@ const [ pokemons, setPokemons ] = useState([]);
                         <Button onClick={()=>addToPokedex(pokemon)} color='red'>Capturer</Button>
                         <Button onClick={()=>deleteFromPokemon(pokemon)} color='red'>Supprimer</Button>
                         <br /><br />
-                        <ModalComponent name="{pokemon.name}"/>
+                        <ModalComponent/>
                     </Card.Content>
                 </Card>
             })

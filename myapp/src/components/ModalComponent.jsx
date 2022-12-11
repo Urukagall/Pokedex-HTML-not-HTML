@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Header, Image, Modal } from 'semantic-ui-react'
+import FormComponent from './FormComponent'
 
 export default function ModalComponent() {
   const [open, setOpen] = React.useState(false)
@@ -9,18 +10,13 @@ export default function ModalComponent() {
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}
-      trigger={<Button color='red'>aaa </Button>}
+      trigger={<Button color='red'>Modifier</Button>}
     >
-      <Modal.Header>Select a Photo</Modal.Header>
+      <Modal.Header>Mofie Pikapute</Modal.Header>
       <Modal.Content image>
         <Image size='medium' src='https://react.semantic-ui.com/images/avatar/large/rachel.png' wrapped />
         <Modal.Description>
-          <Header>Default Profile Image</Header>
-          <p>
-            We've found the following gravatar image associated with your e-mail
-            address.
-          </p>
-          <p>Is it okay to use this photo?</p>
+          <FormComponent/>
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
