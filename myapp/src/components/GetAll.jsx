@@ -1,9 +1,11 @@
 import { useEffect, useState, React } from "react";
-import { addToPokedex, getAll } from "../api/pokemon";
+import { addToPokedex, deleteFromPokemon, getAll, updateFromPokemon } from "../api/pokemon";
 import { Button, Card, Image } from 'semantic-ui-react'
+import FormComponent from "./FormComponent";
+import ModalComponent from "./ModalComponent";
 export default function GetAll(props){
 const [ pokemons, setPokemons ] = useState([]);
-
+    const isUpdate = false;
     //va s'executer seulement au lancement du composant (dep: [])
     useEffect(() => {
     // récupérer la liste des users seulement au chargement du composant ! 
@@ -18,9 +20,8 @@ const [ pokemons, setPokemons ] = useState([]);
         <div class="flex">
         {
             pokemons.map((pokemon,key) =>{
-            return <div key={key} className="bloc-pokemon">
-                <Card>
-                    <Image src={pokemon.img} wrapped ui={false} />
+                return <Card>
+                    <Image src={pokemon.img} wrapped ui={false}/>
                     <Card.Content>
                     <Card.Header>{pokemon.name}</Card.Header>
                     <Card.Description>
@@ -29,9 +30,11 @@ const [ pokemons, setPokemons ] = useState([]);
                     </Card.Content>
                     <Card.Content extra>
                         <Button onClick={()=>addToPokedex(pokemon)} color='red'>Capturer</Button>
+                        <Button onClick={()=>deleteFromPokemon(pokemon)} color='red'>Supprimer</Button>
+                        <br /><br />
+                        <ModalComponent name="{pokemon.name}"/>
                     </Card.Content>
                 </Card>
-            </div>
             })
         }
         </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState, React } from "react";
-import { addToPokedex, deleteFromPokedex, getAllPokedex } from "../api/pokemon";
+import { deleteFromPokedex, getAllPokedex } from "../api/pokemon";
 import { Button, Card, Image } from 'semantic-ui-react'
 export default function GetAll(props){
 const [ pokemons, setPokemons ] = useState([]);
