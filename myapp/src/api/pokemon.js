@@ -77,3 +77,16 @@ export const updateFromPokemon = async (pokemon) => {
         }
     )
 }
+
+export const createToPokemon = async (pokemon) => {
+    const response = await fetch(
+        'http://localhost:4444/pokemon/create', {
+            method: 'POST', 
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type':'application/json'
+            },
+            body:JSON.stringify(pokemon)
+        }
+    )
+}

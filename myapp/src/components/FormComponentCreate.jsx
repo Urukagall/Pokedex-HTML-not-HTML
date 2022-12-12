@@ -1,8 +1,8 @@
-import React from 'react'
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import React, { useState } from 'react'
+import { Button, Form, Message } from 'semantic-ui-react'
 import { useForm } from "react-hook-form";
 import ReactDOM from "react-dom";
-import { updateFromPokemon } from '../api/pokemon';
+import { createToPokemon} from '../api/pokemon';
 
 // https://react-hook-form.com/get-started
 
@@ -29,7 +29,6 @@ const options = [
  ]
 
 export default function FormComponent({pokemonName}){
-
   const {
     register,
     handleSubmit,
@@ -39,25 +38,27 @@ export default function FormComponent({pokemonName}){
     formState: { errors }
   } = useForm();
   const onSubmit = (data) => {
-    data["name"] = pokemonName
-    console.log(data,"aaaaaaaaaaa");
-    updateFromPokemon(data);
-    window.location.reload(false);
+    if (data.name != null && data.name != "" && data.img != null && data.img != "" && data.type1 != null) {
+      console.log(data,"aaaaaaaaaaa");
+      createToPokemon(data);
+      window.location.reload(false);
+    }
   };
 
   // console.log(watch("example"));
 
-  return (<Form onSubmit={handleSubmit(onSubmit)}>
+  return (
+  <Form onSubmit={handleSubmit(onSubmit)}>
     <Form.Field>
-      <label>Nouveau Nom</label>
+      <label>Nom</label>
       <Form.Input placeholder='Nouveau Nom' onChange={async (e, { name, value }) => {
-            setValue("newname", value);
+            setValue("name", value);
             await triggerValidation({ name });
           }}
           error={errors.firstName ? true : false} />
     </Form.Field>
     <Form.Field >
-      <label>Nouvelle Image</label>
+      <label>Image</label>
       <Form.Input placeholder='Nouvelle Image' onChange={async (e, { name, value }) => {
             setValue("img", value);
             await triggerValidation({ name });
@@ -89,6 +90,11 @@ export default function FormComponent({pokemonName}){
         error={errors.genderSelect ? true : false}
       />
     </Form.Field>
+    <Message
+      error
+      header='Action Forbidden'
+      content='You can only sign up for an account once with a given e-mail address.'
+    />
     <Button type='submit'>Submit</Button>
 
   </Form>)

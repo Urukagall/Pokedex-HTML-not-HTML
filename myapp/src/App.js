@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Pokemon from "./pages/Pokemon";
 import Pokedex from './pages/Pokedex';
+import ModalComponentCreate from './components/ModalComponentCreate';
 
 //App.js
 export default function App(props){
@@ -17,6 +18,9 @@ export default function App(props){
         </Route>
         <Route exact path="/Pokedex"> 
           <Pokedex /> 
+        </Route>
+        <Route exact path="/ModalComponentCreate"> 
+          <ModalComponentCreate /> 
         </Route>
       </Switch>
   </Router>

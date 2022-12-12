@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Menu, Segment } from 'semantic-ui-react'
 import Pokedex from '../pages/Pokedex'
 import Pokemon from '../pages/Pokemon'
+import ModalComponentCreate from './ModalComponentCreate'
 
 export default class HeaderComponent extends Component {
   state = { activeItem: 'home' }
@@ -27,6 +28,7 @@ export default class HeaderComponent extends Component {
               active={activeItem === 'Pokedex'}
             />
           </Link>
+          <ModalComponentCreate />
         </Menu>
       </Segment>
     )

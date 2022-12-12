@@ -16,7 +16,7 @@ export default function ModalComponent({pokemonName, pokemonImage}) {
       <Modal.Content image>
         <Image size='medium' src = {pokemonImage} wrapped />
         <Modal.Description>
-          <FormComponent pokemonName = {pokemonName} pokemonImage = {pokemonImage}/>
+          <FormComponent pokemonName = {pokemonName}/>
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>
