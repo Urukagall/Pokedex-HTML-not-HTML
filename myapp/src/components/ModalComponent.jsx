@@ -12,14 +12,14 @@ export default function ModalComponent({pokemonName, pokemonImage}) {
       open={open}
       trigger={<Button color='red'>Modifier</Button>}
     >
-      <Modal.Header>Modification de {pokemonName}</Modal.Header>
-      <Modal.Content image>
+      <Modal.Header className='modal-background-border'>Modification de {pokemonName}</Modal.Header>
+      <Modal.Content image className='modal-background-middle'>
         <Image size='medium' src = {pokemonImage} wrapped />
         <Modal.Description>
           <FormComponent pokemonName = {pokemonName}/>
-        </Modal.Description>
+        </Modal.Description >
       </Modal.Content>
-      <Modal.Actions>
+      <Modal.Actions className='modal-background-border'>
         <Button color='black' onClick={() => setOpen(false)}>
           Nope
         </Button>

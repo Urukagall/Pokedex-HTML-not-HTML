@@ -16,7 +16,11 @@ export default function GetAllPokedex(props){
     },[deleteCount]);
 
     return <div className="pokedex-list">
-        <h2 className="ui center aligned container">Pokedex</h2>
+        <Grid centered>
+            <Grid.Column width={2}>
+                <Segment className="card-background"> <h2 className="ui center aligned container">Pokedex</h2> </Segment>
+            </Grid.Column>
+        </Grid>
         <div class="flex">
             <Grid>
                 <Grid.Row>
@@ -24,7 +28,7 @@ export default function GetAllPokedex(props){
                         pokemons.map((pokedex,key) =>{
                             return <Grid.Column width={4}>
                                 <Segment basic>
-                                    <Card>
+                                    <Card className="card-background">
                                         <Image src={pokedex.img} wrapped ui={false}/>
                                         <Card.Content>
                                             <Card.Header>{pokedex.name}</Card.Header>

@@ -17,7 +17,11 @@ export default function GetAll(props){
     },[deleteCount]);
 
     return <div className="pokemon-list">
-        <h2 className="ui center aligned container">Liste des Pokemon</h2>
+        <Grid centered>
+            <Grid.Column width={3}>
+                <Segment className="card-background"> <h2 className="ui center aligned container">Liste des Pokemon</h2> </Segment>
+            </Grid.Column>
+        </Grid>
         <div class="flex">
             <Grid>
                 <Grid.Row>
@@ -25,7 +29,7 @@ export default function GetAll(props){
                         pokemons.map((pokemon,key) =>{
                             return <Grid.Column width={4}>
                                 <Segment basic>
-                                    <Card>
+                                    <Card className="card-background">
                                         <Image src={pokemon.img} wrapped ui={false}/>
                                         <Card.Content>
                                             <Card.Header>{pokemon.name}</Card.Header>

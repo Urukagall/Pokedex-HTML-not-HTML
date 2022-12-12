@@ -5,9 +5,24 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #424242 url(https://assets.pokemon.com/static2/_ui/img/chrome/body_bg.png) !important;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.card-background{
+  background: #a0a0a0 url(https://assets.pokemon.com/static2/_ui/img/chrome/container_bg.png) !important;
+  
+}
+
+.modal-background-border{
+  background: #e91c1c !important;
+  
+}
+.modal-background-middle{
+  background: #538cf5 !important;
+  
 }
