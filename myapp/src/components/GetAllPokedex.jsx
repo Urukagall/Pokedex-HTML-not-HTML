@@ -1,17 +1,19 @@
 import { useEffect, useState, React } from "react";
 import { deleteFromPokedex, getAllPokedex } from "../api/pokemon";
-import { Button, Card, Image } from 'semantic-ui-react'
-export default function GetAll(props){
-const [ pokemons, setPokemons ] = useState([]);
+import { Button, Card, Image } from 'semantic-ui-react';
+
+export default function GetAllPokedex(props){
+    const [ pokemons, setPokemons ] = useState([]);
+    const [ deleteCount, setDeleteCount ] = useState(0);
 
     //va s'executer seulement au lancement du composant (dep: [])
     useEffect(() => {
-    // récupérer la liste des users seulement au chargement du composant ! 
-    const pokedexFetched = getAllPokedex();
-    pokedexFetched
-        .then(result => setPokemons(result))
-        .catch(error=>console.error("Erreur avec notre API :",error.message));
-    },[]);
+        // récupérer la liste des users seulement au chargement du composant ! 
+        const pokedexFetched = getAllPokedex();
+        pokedexFetched
+            .then(result => setPokemons(result))
+            .catch(error=>console.error("Erreur avec notre API :",error.message));
+    },[deleteCount]);
 
     return <div className="pokemon-list">
         <h2>Pokedex</h2>
@@ -27,7 +29,10 @@ const [ pokemons, setPokemons ] = useState([]);
                     </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
-                        <Button onClick={()=>deleteFromPokedex(pokemon)} color='red'>Rejeter</Button>
+                        <Button onClick={()=>{
+                            deleteFromPokedex(pokemon);
+                            setDeleteCount(deleteCount+1)
+                        }} color='red'>Rejeter</Button>
                     </Card.Content>
                 </Card>
             })

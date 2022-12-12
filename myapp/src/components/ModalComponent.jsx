@@ -2,7 +2,7 @@ import React from 'react'
 import { Button, Header, Image, Modal } from 'semantic-ui-react'
 import FormComponent from './FormComponent'
 
-export default function ModalComponent() {
+export default function ModalComponent({pokemonName, pokemonImage}) {
   const [open, setOpen] = React.useState(false)
 
   return (
@@ -12,11 +12,11 @@ export default function ModalComponent() {
       open={open}
       trigger={<Button color='red'>Modifier</Button>}
     >
-      <Modal.Header>Mofie Pikapute</Modal.Header>
+      <Modal.Header>Modification de {pokemonName}</Modal.Header>
       <Modal.Content image>
-        <Image size='medium' src='https://react.semantic-ui.com/images/avatar/large/rachel.png' wrapped />
+        <Image size='medium' src = {pokemonImage} wrapped />
         <Modal.Description>
-          <FormComponent/>
+          <FormComponent pokemonName = {pokemonName} pokemonImage = {pokemonImage}/>
         </Modal.Description>
       </Modal.Content>
       <Modal.Actions>

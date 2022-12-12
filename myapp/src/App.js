@@ -1,4 +1,3 @@
-import Home from "./pages/Home";
 import 'semantic-ui-css/semantic.min.css'
 import {
   BrowserRouter as Router,
@@ -6,13 +5,18 @@ import {
   Route,
   useParams
 } from "react-router-dom";
+import Pokemon from "./pages/Pokemon";
+import Pokedex from './pages/Pokedex';
 
 //App.js
 export default function App(props){
   return <Router>
       <Switch>
         <Route exact path="/"> 
-          <Home /> 
+          <Pokemon /> 
+        </Route>
+        <Route exact path="/Pokedex"> 
+          <Pokedex /> 
         </Route>
       </Switch>
   </Router>
