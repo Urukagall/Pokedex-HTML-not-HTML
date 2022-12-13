@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import { Menu, Segment } from 'semantic-ui-react'
-import Pokedex from '../pages/Pokedex'
-import Pokemon from '../pages/Pokemon'
+import { Link, Redirect, browserHistory } from 'react-router-dom'
+import { Menu,Image } from 'semantic-ui-react'
 import ModalComponentCreate from './ModalComponentCreate'
 
 export default class HeaderComponent extends Component {
@@ -14,23 +12,33 @@ export default class HeaderComponent extends Component {
     const { activeItem } = this.state
 
     return (
-      <Segment inverted>
-        <Menu inverted pointing secondary>
-          <Link to="/">
+        <Menu inverted className='fixed' stackable>
+          <Menu.Item
+          as={Link}
+          to="/Game"
+          name='Game'
+          active={activeItem === 'Game'}
+          onClick={this.handleItemClick}
+          >
+            <Image src={"https://cdn.discordapp.com/attachments/1052126650646675456/1052243988624707636/Pokemon_Sus.png"} size='tiny'/>
+          </Menu.Item>
             <Menu.Item
+              as={Link}
+              to="/"
               name='Pokemon'
               active={activeItem === 'Pokemon'}
+              onClick={this.handleItemClick}
             />
-          </Link>
-          <Link to="/pokedex">
             <Menu.Item
+              as={Link}
+              to="/Pokedex"
               name='Pokedex'
               active={activeItem === 'Pokedex'}
+              onClick={this.handleItemClick}
             />
-          </Link>
           <ModalComponentCreate />
         </Menu>
-      </Segment>
+     
     )
   }
 }

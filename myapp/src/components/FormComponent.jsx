@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { Button, Form } from 'semantic-ui-react'
 import { useForm } from "react-hook-form";
 import ReactDOM from "react-dom";
 import { updateFromPokemon } from '../api/pokemon';
@@ -31,9 +31,7 @@ const options = [
 export default function FormComponent({pokemonName}){
 
   const {
-    register,
     handleSubmit,
-    watch,
     setValue,
     triggerValidation,
     formState: { errors }
@@ -48,16 +46,16 @@ export default function FormComponent({pokemonName}){
 
   return (<Form onSubmit={handleSubmit(onSubmit)}>
     <Form.Field>
-      <label>Nouveau Nom</label>
-      <Form.Input placeholder='Nouveau Nom' onChange={async (e, { name, value }) => {
+      <label>New Name</label>
+      <Form.Input placeholder='New Name' onChange={async (e, { name, value }) => {
             setValue("newname", value);
             await triggerValidation({ name });
           }}
           error={errors.firstName ? true : false} />
     </Form.Field>
     <Form.Field >
-      <label>Nouvelle Image</label>
-      <Form.Input placeholder='Nouvelle Image' onChange={async (e, { name, value }) => {
+      <label>New Image</label>
+      <Form.Input placeholder='New Image' onChange={async (e, { name, value }) => {
             setValue("img", value);
             await triggerValidation({ name });
           }}

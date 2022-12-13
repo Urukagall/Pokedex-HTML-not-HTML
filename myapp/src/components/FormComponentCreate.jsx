@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Button, Form, Message } from 'semantic-ui-react'
 import { useForm } from "react-hook-form";
 import ReactDOM from "react-dom";
@@ -30,9 +30,7 @@ const options = [
 
 export default function FormComponent({pokemonName}){
   const {
-    register,
     handleSubmit,
-    watch,
     setValue,
     triggerValidation,
     formState: { errors }
@@ -49,8 +47,8 @@ export default function FormComponent({pokemonName}){
   return (
   <Form onSubmit={handleSubmit(onSubmit)}>
     <Form.Field>
-      <label>Nom</label>
-      <Form.Input placeholder='Nouveau Nom' onChange={async (e, { name, value }) => {
+      <label>Name</label>
+      <Form.Input placeholder='Name' onChange={async (e, { name, value }) => {
             setValue("name", value);
             await triggerValidation({ name });
           }}
@@ -58,7 +56,7 @@ export default function FormComponent({pokemonName}){
     </Form.Field>
     <Form.Field >
       <label>Image</label>
-      <Form.Input placeholder='Nouvelle Image' onChange={async (e, { name, value }) => {
+      <Form.Input placeholder='Image' onChange={async (e, { name, value }) => {
             setValue("img", value);
             await triggerValidation({ name });
           }}

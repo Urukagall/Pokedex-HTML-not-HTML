@@ -8,6 +8,7 @@ import {
 import Pokemon from "./pages/Pokemon";
 import Pokedex from './pages/Pokedex';
 import ModalComponentCreate from './components/ModalComponentCreate';
+import PokeGame from './pages/PokeGame';
 
 //App.js
 export default function App(props){
@@ -21,6 +22,9 @@ export default function App(props){
         </Route>
         <Route exact path="/ModalComponentCreate"> 
           <ModalComponentCreate /> 
+        </Route>
+        <Route exact path="/Game"> 
+          <PokeGame /> 
         </Route>
       </Switch>
   </Router>
