@@ -26,7 +26,7 @@ const options = [
   { key: 'Steel', text: 'Steel', value: 'Steel' },
   { key: 'Fairy', text: 'Fairy', value: 'Fairy' },
   { key: '???', text: '???', value: '???' },
- ]
+]
 
 export default function FormComponent({pokemonName}){
 
@@ -40,7 +40,6 @@ export default function FormComponent({pokemonName}){
   } = useForm();
   const onSubmit = (data) => {
     data["name"] = pokemonName
-    console.log(data,"aaaaaaaaaaa");
     updateFromPokemon(data);
     window.location.reload(false);
   };

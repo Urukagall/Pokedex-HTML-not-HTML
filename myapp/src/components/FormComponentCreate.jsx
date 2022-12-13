@@ -39,7 +39,6 @@ export default function FormComponent({pokemonName}){
   } = useForm();
   const onSubmit = (data) => {
     if (data.name != null && data.name != "" && data.img != null && data.img != "" && data.type1 != null) {
-      console.log(data,"aaaaaaaaaaa");
       createToPokemon(data);
       window.location.reload(false);
     }
