@@ -26,3 +26,8 @@ code {
   background: #538cf5 !important;
   
 }
+
+.card-image-background{
+  background: url(https://cdn.discordapp.com/attachments/1052126650646675456/1052199044086247424/529d2b151c33ba79a4008b6da88fdf85.jpg) !important;
+  background-size: cover !important;
+}
