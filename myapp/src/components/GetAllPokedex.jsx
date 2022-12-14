@@ -49,6 +49,7 @@ export default function GetAllPokedex(props){
                 <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Dark");setDeleteCount(deleteCount+1)}} color="brown">Dark</Button></Grid.Column></Segment>
                 <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Fairy");setDeleteCount(deleteCount+1)}} color="pink">Fairy</Button></Grid.Column></Segment>
                 <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("???");setDeleteCount(deleteCount+1)}} color="teal">???</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("ABSOLUTE GIGACHAD");setDeleteCount(deleteCount+1)}} color="yellow">ABSOLUTE GIGACHAD</Button></Grid.Column></Segment>
                 <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType(null);setDeleteCount(deleteCount+1)}} color="red">All</Button></Grid.Column></Segment>
             </Grid.Row> 
         </Grid>
