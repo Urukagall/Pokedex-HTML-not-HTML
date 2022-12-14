@@ -27,32 +27,19 @@ export default function PokeGameComponent(){
     })
 
     const randomPoke = Math.floor(Math.random() * pokemons.length);
-
+    
     return (
 
         
         <Grid centered>
             <Grid.Row>
                 <Grid.Column width={3}>
-                    <Segment className="card-background"> <h2 className="ui center aligned container"></h2> </Segment>
+                    <Segment className="card-background"> <h2 className="ui center aligned container">Slaves zone</h2> </Segment>
                 </Grid.Column>
             </Grid.Row>
             <Grid.Row>
                     <Image size='massive' src="https://cdn.discordapp.com/attachments/1052126650646675456/1052253282275430491/Land.png" centered/>
                     <Image size='medium' src={pokeArray[randomPoke]} wrapped className='absolute card-image-game' centered/>
-                {/* <Card className="card-background" fluid>
-                    <Image size='tiny' src={pokeArray[randomPoke]} wrapped ui={false} className="card-image-game-background"/>
-                    <Card.Content>
-                        <Card.Header>A wild pokemon appear</Card.Header>
-                        <Card.Description>
-                            What do you want to do 
-                        </Card.Description>
-                    </Card.Content>
-                    <Card.Content extra>
-                         <Button onClick={()=>{addToPokedex(pokemon);setDeleteCount(deleteCount+1)}} color='red'>Capturer</Button>
-                        <Button onClick={()=>{setDeleteCount(deleteCount+1)}} color='red'>Fuir</Button> 
-                    </Card.Content>
-                </Card> */}
             </Grid.Row>
             <Grid.Row>
                 <Grid.Column>   

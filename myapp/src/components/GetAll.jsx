@@ -7,7 +7,7 @@ export default function GetAll(props){
     
     const [ pokemons, setPokemons ] = useState([]);
     const [ deleteCount, setDeleteCount ] = useState(0);
-    const [ choiceType, setchoiceType ] = useState(null);
+    const [ choiceType, setChoiceType ] = useState(null);
 
     //va s'executer seulement au lancement du composant (dep: [])
     useEffect(() => {
@@ -20,36 +20,37 @@ export default function GetAll(props){
     return <div className="pokemon-list">
         <Grid centered>
             <Grid.Row>
-            <Grid.Column width={3}>
-                <Segment className="card-background"> <h2 className="ui center aligned container">List of Pokemon</h2> </Segment>
-            </Grid.Column>
+                <Grid.Column width={3}>
+                    <Segment className="card-background"> <h2 className="ui center aligned container">List of Pokemon</h2> </Segment>
+                </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-            <Grid.Column width={2}>
-                <Segment className="card-background"> <h3 className="ui center aligned container">Sort by type</h3> </Segment>
-            </Grid.Column>
+                <Grid.Column width={2}>
+                    <Segment className="card-background"> <h3 className="ui center aligned container">Sort by type</h3> </Segment>
+                </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-                <Segment basic className="segment-margin-top"><Grid.Column width={2}><Button onClick={()=>{setchoiceType("Steel");setDeleteCount(deleteCount+1)}} color="teal">Steel</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setchoiceType("Figthing");setDeleteCount(deleteCount+1)}} color="red">Figthing</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setchoiceType("Dragon");setDeleteCount(deleteCount+1)}} color="violet">Dragon</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setchoiceType("Normal");setDeleteCount(deleteCount+1)}} color="grey">Normal</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setchoiceType("Fire");setDeleteCount(deleteCount+1)}} color="orange">Fire</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setchoiceType("Water");setDeleteCount(deleteCount+1)}} color="blue">Water</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setchoiceType("Flying");setDeleteCount(deleteCount+1)}} color="purple">Flying</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setchoiceType("Grass");setDeleteCount(deleteCount+1)}} color="green">Grass</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setchoiceType("Poison");setDeleteCount(deleteCount+1)}} color="purple">Poison</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setchoiceType("Electric");setDeleteCount(deleteCount+1)}} color="yellow">Electric</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setchoiceType("Ground");setDeleteCount(deleteCount+1)}} color="brown">Ground</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setchoiceType("Psychic");setDeleteCount(deleteCount+1)}} color="pink">Psychic</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setchoiceType("Rock");setDeleteCount(deleteCount+1)}} color="brown">Rock</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setchoiceType("Ice");setDeleteCount(deleteCount+1)}} color="teal">Ice</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setchoiceType("Bug");setDeleteCount(deleteCount+1)}} color="olive">Bug</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setchoiceType("Ghost");setDeleteCount(deleteCount+1)}} color="violet">Ghost</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setchoiceType("Dark");setDeleteCount(deleteCount+1)}} color="brown">Dark</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setchoiceType("Fairy");setDeleteCount(deleteCount+1)}} color="pink">Fairy</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setchoiceType("???");setDeleteCount(deleteCount+1)}} color="teal">???</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setchoiceType(null);setDeleteCount(deleteCount+1)}} color="red">All</Button></Grid.Column></Segment>
+                <Segment basic className="segment-margin-top"><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Steel");setDeleteCount(deleteCount+1)}} color="teal">Steel</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Fighting");setDeleteCount(deleteCount+1)}} color="red">Fighting</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Dragon");setDeleteCount(deleteCount+1)}} color="violet">Dragon</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Normal");setDeleteCount(deleteCount+1)}} color="grey">Normal</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Fire");setDeleteCount(deleteCount+1)}} color="orange">Fire</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Water");setDeleteCount(deleteCount+1)}} color="blue">Water</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Flying");setDeleteCount(deleteCount+1)}} color="purple">Flying</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Grass");setDeleteCount(deleteCount+1)}} color="green">Grass</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Poison");setDeleteCount(deleteCount+1)}} color="purple">Poison</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Electric");setDeleteCount(deleteCount+1)}} color="yellow">Electric</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Ground");setDeleteCount(deleteCount+1)}} color="brown">Ground</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Psychic");setDeleteCount(deleteCount+1)}} color="pink">Psychic</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Rock");setDeleteCount(deleteCount+1)}} color="brown">Rock</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Ice");setDeleteCount(deleteCount+1)}} color="teal">Ice</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Bug");setDeleteCount(deleteCount+1)}} color="olive">Bug</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Ghost");setDeleteCount(deleteCount+1)}} color="violet">Ghost</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Dark");setDeleteCount(deleteCount+1)}} color="brown">Dark</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Fairy");setDeleteCount(deleteCount+1)}} color="pink">Fairy</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("???");setDeleteCount(deleteCount+1)}} color="teal">???</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("ABSOLUTE GIGACHAD");setDeleteCount(deleteCount+1)}} color="yellow">ABSOLUTE GIGACHAD</Button></Grid.Column></Segment>
+                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType(null);setDeleteCount(deleteCount+1)}} color="red">All</Button></Grid.Column></Segment>
             </Grid.Row> 
         </Grid>
         <div class="flex">
@@ -71,9 +72,6 @@ export default function GetAll(props){
                                                 </Card.Content>
                                                 <Card.Content extra>
                                                     <Button onClick={()=>{addToPokedex(pokemon);setDeleteCount(deleteCount+1)}} color='red'>Capture</Button>
-                                                    <Button onClick={()=>{deleteFromPokemon(pokemon);setDeleteCount(deleteCount+1)}} color='red'>Abandon</Button>
-                                                    <br /><br />
-                                                    <ModalComponent pokemonName={pokemon.name} pokemonImage = {pokemon.img}/>
                                                 </Card.Content>
                                             </Card>
                                         </Segment>
@@ -93,9 +91,6 @@ export default function GetAll(props){
                                                 </Card.Content>
                                                 <Card.Content extra>
                                                     <Button onClick={()=>{addToPokedex(pokemon);setDeleteCount(deleteCount+1)}} color='red'>Capture</Button>
-                                                    <Button onClick={()=>{deleteFromPokemon(pokemon);setDeleteCount(deleteCount+1)}} color='red'>Abandon</Button>
-                                                    <br /><br />
-                                                    <ModalComponent pokemonName={pokemon.name} pokemonImage = {pokemon.img}/>
                                                 </Card.Content>
                                             </Card>
                                         </Segment>

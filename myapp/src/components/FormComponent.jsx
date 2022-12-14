@@ -26,6 +26,7 @@ const options = [
   { key: 'Steel', text: 'Steel', value: 'Steel' },
   { key: 'Fairy', text: 'Fairy', value: 'Fairy' },
   { key: '???', text: '???', value: '???' },
+  { key: 'ABSOLUTE GIGACHAD', text: 'ABSOLUTE GIGACHAD', value: 'ABSOLUTE GIGACHAD' },
 ]
 
 export default function FormComponent({pokemonName}){

@@ -1,8 +1,9 @@
 import { useEffect, useState, React } from "react";
-import { deleteFromPokedex, getAllPokedex } from "../api/pokemon";
+import { addToPokedex, deleteFromPokemon, getAll } from "../api/pokemon";
 import { Button, Card, Grid, Image, Segment } from 'semantic-ui-react'
+import ModalComponent from "./ModalComponent";
 
-export default function GetAllPokedex(props){
+export default function PanelAdminComponent(props){
     
     const [ pokemons, setPokemons ] = useState([]);
     const [ deleteCount, setDeleteCount ] = useState(0);
@@ -11,17 +12,16 @@ export default function GetAllPokedex(props){
     //va s'executer seulement au lancement du composant (dep: [])
     useEffect(() => {
     // récupérer la liste des users seulement au chargement du composant ! 
-        const pokemonsFetched = getAllPokedex();
-        pokemonsFetched
-            .then(result => setPokemons(result))
-            .catch(error=>console.error("Erreur avec notre API :",error.message));
+    const pokemonsFetched = getAll();
+    pokemonsFetched
+        .then(result => setPokemons(result))
+        .catch(error=>console.error("Erreur avec notre API :",error.message));
     },[deleteCount]);
-
-    return <div className="pokedex-list">
+    return <div className="pokemon-list">
         <Grid centered>
             <Grid.Row>
                 <Grid.Column width={3}>
-                    <Segment className="card-background"> <h2 className="ui center aligned container">List of Pokemon</h2> </Segment>
+                    <Segment className="card-background"> <h2 className="ui center aligned container">Panel Admin </h2> </Segment>
                 </Grid.Column>
             </Grid.Row>
             <Grid.Row>
@@ -56,40 +56,42 @@ export default function GetAllPokedex(props){
             <Grid>
                 <Grid.Row>
                     {   
-                        pokemons.map((pokedex) =>{
-                            if (pokedex.type.length === 1) {
-                                if (pokedex.type[0].type === choiceType || choiceType === null) {
+                        pokemons.map((pokemon) =>{
+                            if (pokemon.type.length === 1) {
+                                if (pokemon.type[0].type === choiceType || choiceType === null) {
                                     return (<Grid.Column width={4}>
                                         <Segment basic>
                                             <Card className="card-background">
-                                                <Image src={pokedex.img} wrapped ui={false} className="card-image-background"/>
+                                                <Image src={pokemon.img} wrapped ui={false} className="card-image-background"/>
                                                 <Card.Content>
-                                                    <Card.Header>{pokedex.name}</Card.Header>
+                                                    <Card.Header>{pokemon.name}</Card.Header>
                                                     <Card.Description>
-                                                        <ul>{pokedex.type.map((type,key)=><li>{type.type}</li>)}</ul>
+                                                        <ul>{pokemon.type.map((type,key)=><li>{type.type}</li>)}</ul>
                                                     </Card.Description>
                                                 </Card.Content>
                                                 <Card.Content extra>
-                                                    <Button onClick={()=>{deleteFromPokedex(pokedex);setDeleteCount(deleteCount+1)}} color='red'>Abandon</Button>
+                                                    <Button onClick={()=>{deleteFromPokemon(pokemon);setDeleteCount(deleteCount+1)}} color='red'>Abandon</Button>
+                                                    <ModalComponent pokemonName={pokemon.name} pokemonImage = {pokemon.img}/>
                                                 </Card.Content>
                                             </Card>
                                         </Segment>
                                     </Grid.Column>)
                                 }
-                            }else if (pokedex.type.length === 2){
-                                if (pokedex.type[0].type === choiceType || pokedex.type[1].type === choiceType || choiceType === null) {
+                            }else if (pokemon.type.length === 2){
+                                if (pokemon.type[0].type === choiceType || pokemon.type[1].type === choiceType || choiceType === null) {
                                     return (<Grid.Column width={4}>
                                         <Segment basic>
                                             <Card className="card-background">
-                                                <Image src={pokedex.img} wrapped ui={false} className="card-image-background"/>
+                                                <Image src={pokemon.img} wrapped ui={false} className="card-image-background"/>
                                                 <Card.Content>
-                                                    <Card.Header>{pokedex.name}</Card.Header>
+                                                    <Card.Header>{pokemon.name}</Card.Header>
                                                     <Card.Description>
-                                                        <ul>{pokedex.type.map((type,key)=><li>{type.type}</li>)}</ul>
+                                                        <ul>{pokemon.type.map((type,key)=><li>{type.type}</li>)}</ul>
                                                     </Card.Description>
                                                 </Card.Content>
                                                 <Card.Content extra>
-                                                    <Button onClick={()=>{deleteFromPokedex(pokedex);setDeleteCount(deleteCount+1)}} color='red'>Abandon</Button>
+                                                    <Button onClick={()=>{deleteFromPokemon(pokemon);setDeleteCount(deleteCount+1)}} color='red'>Abandon</Button>
+                                                    <ModalComponent pokemonName={pokemon.name} pokemonImage = {pokemon.img}/>
                                                 </Card.Content>
                                             </Card>
                                         </Segment>
