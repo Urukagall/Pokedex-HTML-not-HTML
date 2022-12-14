@@ -1,7 +1,7 @@
-import React, { Component, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {  } from 'react-router-dom'
-import { Button, Card, Grid, Image, Segment } from 'semantic-ui-react'
-import { addToPokedex, deleteFromPokemon, getAll } from "../api/pokemon";
+import { Button, Grid, Image, Segment } from 'semantic-ui-react'
+import { addToPokedex, getAll } from "../api/pokemon";
 
 export default function PokeGameComponent(){
 

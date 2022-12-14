@@ -18,49 +18,49 @@ export default function GetAllPokedex(props){
     },[deleteCount]);
 
     return <div className="pokedex-list">
-        <Grid centered>
+        <Grid centered doubling columns={11}>
             <Grid.Row>
-                <Grid.Column width={3}>
+                <Grid.Column>
                     <Segment className="card-background"> <h2 className="ui center aligned container">List of Pokemon</h2> </Segment>
                 </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-                <Grid.Column width={2}>
+                <Grid.Column>
                     <Segment className="card-background"> <h3 className="ui center aligned container">Sort by type</h3> </Segment>
                 </Grid.Column>
             </Grid.Row>
             <Grid.Row>
-                <Segment basic className="segment-margin-top"><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Steel");setDeleteCount(deleteCount+1)}} color="teal">Steel</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Fighting");setDeleteCount(deleteCount+1)}} color="red">Fighting</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Dragon");setDeleteCount(deleteCount+1)}} color="violet">Dragon</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Normal");setDeleteCount(deleteCount+1)}} color="grey">Normal</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Fire");setDeleteCount(deleteCount+1)}} color="orange">Fire</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Water");setDeleteCount(deleteCount+1)}} color="blue">Water</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Flying");setDeleteCount(deleteCount+1)}} color="purple">Flying</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Grass");setDeleteCount(deleteCount+1)}} color="green">Grass</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Poison");setDeleteCount(deleteCount+1)}} color="purple">Poison</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Electric");setDeleteCount(deleteCount+1)}} color="yellow">Electric</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Ground");setDeleteCount(deleteCount+1)}} color="brown">Ground</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Psychic");setDeleteCount(deleteCount+1)}} color="pink">Psychic</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Rock");setDeleteCount(deleteCount+1)}} color="brown">Rock</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Ice");setDeleteCount(deleteCount+1)}} color="teal">Ice</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Bug");setDeleteCount(deleteCount+1)}} color="olive">Bug</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Ghost");setDeleteCount(deleteCount+1)}} color="violet">Ghost</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Dark");setDeleteCount(deleteCount+1)}} color="brown">Dark</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("Fairy");setDeleteCount(deleteCount+1)}} color="pink">Fairy</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("???");setDeleteCount(deleteCount+1)}} color="teal">???</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType("ABSOLUTE GIGACHAD");setDeleteCount(deleteCount+1)}} color="yellow">ABSOLUTE GIGACHAD</Button></Grid.Column></Segment>
-                <Segment basic><Grid.Column width={2}><Button onClick={()=>{setChoiceType(null);setDeleteCount(deleteCount+1)}} color="red">All</Button></Grid.Column></Segment>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType("Steel");setDeleteCount(deleteCount+1)}} color="teal">Steel</Button></Segment></Grid.Column>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType("Fighting");setDeleteCount(deleteCount+1)}} color="red">Fighting</Button></Segment></Grid.Column>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType("Dragon");setDeleteCount(deleteCount+1)}} color="violet">Dragon</Button></Segment></Grid.Column>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType("Normal");setDeleteCount(deleteCount+1)}} color="grey">Normal</Button></Segment></Grid.Column>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType("Fire");setDeleteCount(deleteCount+1)}} color="orange">Fire</Button></Segment></Grid.Column>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType("Water");setDeleteCount(deleteCount+1)}} color="blue">Water</Button></Segment></Grid.Column>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType("Flying");setDeleteCount(deleteCount+1)}} color="purple">Flying</Button></Segment></Grid.Column>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType("Grass");setDeleteCount(deleteCount+1)}} color="green">Grass</Button></Segment></Grid.Column>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType("Poison");setDeleteCount(deleteCount+1)}} color="purple">Poison</Button></Segment></Grid.Column>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType("Electric");setDeleteCount(deleteCount+1)}} color="yellow">Electric</Button></Segment></Grid.Column>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType("Ground");setDeleteCount(deleteCount+1)}} color="brown">Ground</Button></Segment></Grid.Column>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType("Psychic");setDeleteCount(deleteCount+1)}} color="pink">Psychic</Button></Segment></Grid.Column>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType("Rock");setDeleteCount(deleteCount+1)}} color="brown">Rock</Button></Segment></Grid.Column>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType("Ice");setDeleteCount(deleteCount+1)}} color="teal">Ice</Button></Segment></Grid.Column>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType("Bug");setDeleteCount(deleteCount+1)}} color="olive">Bug</Button></Segment></Grid.Column>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType("Ghost");setDeleteCount(deleteCount+1)}} color="violet">Ghost</Button></Segment></Grid.Column>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType("Dark");setDeleteCount(deleteCount+1)}} color="brown">Dark</Button></Segment></Grid.Column>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType("Fairy");setDeleteCount(deleteCount+1)}} color="pink">Fairy</Button></Segment></Grid.Column>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType("???");setDeleteCount(deleteCount+1)}} color="teal">???</Button></Segment></Grid.Column>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType("ABSOLUTE GIGACHAD");setDeleteCount(deleteCount+1)}} color="yellow">ABSOLUTE GIGACHAD</Button></Segment></Grid.Column>
+                <Grid.Column><Segment basic><Button onClick={()=>{setChoiceType(null);setDeleteCount(deleteCount+1)}} color="red">All</Button></Segment></Grid.Column>
             </Grid.Row> 
         </Grid>
         <div class="flex">
-            <Grid>
+            <Grid doubling columns={4}>
                 <Grid.Row>
                     {   
                         pokemons.map((pokedex) =>{
                             if (pokedex.type.length === 1) {
                                 if (pokedex.type[0].type === choiceType || choiceType === null) {
-                                    return (<Grid.Column width={4}>
+                                    return (<Grid.Column>
                                         <Segment basic>
                                             <Card className="card-background">
                                                 <Image src={pokedex.img} wrapped ui={false} className="card-image-background"/>
@@ -79,7 +79,7 @@ export default function GetAllPokedex(props){
                                 }
                             }else if (pokedex.type.length === 2){
                                 if (pokedex.type[0].type === choiceType || pokedex.type[1].type === choiceType || choiceType === null) {
-                                    return (<Grid.Column width={4}>
+                                    return (<Grid.Column>
                                         <Segment basic>
                                             <Card className="card-background">
                                                 <Image src={pokedex.img} wrapped ui={false} className="card-image-background"/>
